@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+* {margin: 0; padding: 0;}
+/*--------reset--------*/
+#listWrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin: 100px auto;
+    padding: 10px 0;
+    background-color: rgb(55, 243, 180);
+    /* border-radius: 10px; */
+}
+    h1 { 
+        letter-spacing: -0.06em;
+        color: rgb(12, 65, 48);
+    }
+    .searchWrap {
+        display: flex;
+        align-items: center;
+        margin: 15px 0;
+    }
+        input {
+            width: 300px;
+            padding: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        input:focus { outline: 0; }
+        .addBtn {
+            width: 35px;
+            height: 35px;
+            background-color: rgb(12, 65, 48);
+            border-radius: 5px;
+            position: relative; /*span의 기준*/
+            cursor: pointer;
+        }
+            .addBtn span {
+                display: block; /*span은 inline이기 때문에 없으면 가로세로 값을 줄 수가 없음*/
+                background-color: #fff;
+                width: 25px;
+                height: 3px;
+                border-radius: 2px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+            .addBtn span:nth-child(2) {
+                transform: translate(-50%,-50%) rotate(90deg);
+            }
