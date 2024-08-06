@@ -8,6 +8,24 @@
     <link rel="stylesheet" href="to_do_list.css">
     <script>
         function addList() {
+            //input창 읽어오기
+            const inputValue = document.getElementById('inputValue').value;
+            
+            //li를 생성
+            const li = document.createElement('li');
+
+            //체크박스 만들기
+            const checkBox = document.createElement('button');
+            li.appendChild(checkBox);
+            
+            //input에서 읽어온 값을 li에 추가
+            const listTxt = document.createTextNode(inputValue);
+            li.appendChild(listTxt);
+            
+            //li를 ul에 추가
+            document.getElementById('List');
+            List.appendChild(li);
+
             
         }
     </script>
@@ -16,12 +34,13 @@
     <div id="listWrap">
         <h1>To Do List</h1>
         <div class="searchWrap">
-            <input type="text">
-            <div class="addBtn">
+            <input type="text" id="inputValue">
+            <div class="addBtn" onclick="addList()">
                 <span></span>
                 <span></span>
             </div>
         </div>
     </div>
+    <ul id="List"></ul>
 </body>
 </html>
