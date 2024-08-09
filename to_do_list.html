@@ -25,11 +25,16 @@
             document.getElementById('List');
             List.appendChild(li); 
 
-            List.addEventListener(click, function(){
-                if(checkBox === true) {
-                    classList.add(".clear")
+            //체크박스를 클릭하면 li에 중앙선을 생성
+            List.addEventListener("click", function(){
+                if(checkBox.checked) {
+                    li.classList.add("clear")
+                } else {
+                    li.classList.remove("clear")
                 }
             })
+
+            //삭제 버튼 만들기
         }    
         
     
