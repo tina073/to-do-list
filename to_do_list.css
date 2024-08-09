@@ -68,14 +68,31 @@ li { list-style: none; }
             /* border-bottom: 1px solid #aaa; */
             box-sizing: border-box;
             color: #333;
-            
+            position: relative;
         }
         li:last-child { border:none; }
         li:hover {
             background-color: #ddd;
         }
-        li.clear {
-            color: #aaa;
-            text-decoration: line-through;
-        }
+            li span {
+                display: block; /*span은 inline이기 때문에 없으면 가로세로 값을 줄 수가 없음*/
+                background-color: #000;
+                width: 15px;
+                height: 3px;
+                border-radius: 2px;
+            }
+            li span:nth-child(1) {
+                transform: rotate(45deg);
+            }
+            li span:nth-child(2) {
+                transform: rotate(-45deg);
+            }
+            li.clear {
+                color: #aaa;
+                text-decoration: line-through;
+            }
+            li.delete {
+
+            }
         input { margin-right: 10px;}
+        
