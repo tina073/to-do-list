@@ -10,20 +10,24 @@
         
         function addList() {
             //li 추가
-            //input창 읽어오기
-            const inputValue = document.getElementById('inputValue').value;
             //li를 생성
             const li = document.createElement('li');
             //체크박스 만들기
             const checkBox = document.createElement('input');
             const inputType = checkBox.setAttribute("type", "checkbox");
             li.appendChild(checkBox);
-            //input에서 읽어온 값을 li에 추가
-            const listTxt = document.createTextNode(inputValue);
-            li.appendChild(listTxt);
-            //li를 ul에 추가
-            document.getElementById('List');
-            List.appendChild(li); 
+            //input창 읽어오기
+            const inputValue = document.getElementById('inputValue').value;
+
+            //input창이 공백일 때는 li를 추가하지 않음
+            if(inputValue !== "") {
+                //input에서 읽어온 값을 li에 추가
+                const listTxt = document.createTextNode(inputValue);
+                li.appendChild(listTxt);
+                //li를 ul에 추가
+                document.getElementById('List');
+                List.appendChild(li);
+            } 
 
             //체크박스를 클릭하면 li에 중앙선을 생성
             List.addEventListener("click", function(){
@@ -35,8 +39,17 @@
             })
 
             //삭제 버튼 만들기
-            const deleteBtn = document.createElement("span");
-            li.append(deleteBtn); //for문 사용해보기
+            let deleteLine = document.querySelector("li");
+            let deleteBtn;
+            for(i=1; i<=2; i++) {
+                deleteBtn = document.createElement("span");
+                deleteLine.className = "deleteLine" + i;
+                li.append(deleteBtn)
+            }
+            //삭제 버튼을 클릭하면 해당 li 없어지기
+            deleteBtn.addEventListener("click", function(){
+                li.remove();
+            })
         }    
         
     

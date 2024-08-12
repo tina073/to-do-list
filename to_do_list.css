@@ -76,23 +76,22 @@ li { list-style: none; }
         }
             li span {
                 display: block; /*span은 inline이기 때문에 없으면 가로세로 값을 줄 수가 없음*/
-                background-color: #000;
+                background-color: #333;
                 width: 15px;
-                height: 3px;
+                height: 2px;
                 border-radius: 2px;
-            }
-            li span:nth-child(1) {
+                position: absolute;
+                right: 80px;
                 transform: rotate(45deg);
+                cursor: pointer;
             }
+            
             li span:nth-child(2) {
                 transform: rotate(-45deg);
             }
             li.clear {
                 color: #aaa;
                 text-decoration: line-through;
-            }
-            li.delete {
-
             }
         input { margin-right: 10px;}
         
